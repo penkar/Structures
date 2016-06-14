@@ -10,14 +10,22 @@ class Node
     @status = 0
   end
 
+  def visit
+    @status = 1
+  end
+
+  def leave
+    @status = 2
+  end
+
   def add_adjacent(*adjacent)
-    @adjacent.push adjacent
+    @adjacent.concat([*adjacent])
     @adjacent.uniq!
   end
 
   def remove_adjacent(*adjacent)
     [*adjacent].each do |x|
-			@arr.slice!(@arr.index(x)) if @arr.index(x)
+			@adjacent.slice!(@adjacent.index(x)) if @adjacent.index(x)
 		end
   end
 end
