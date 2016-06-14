@@ -13,8 +13,23 @@ class Graph
   end
 
   private
-  def one_link(start, fin)
 
+  def one_link(start, fin)
+    list = start.adjacent
+    list.each do |node|
+      node.visit
+    end
+
+    while !list.empty?
+      current = list.shift
+      next if current.status > 1
+      return true if current == fin
+      current.leave
+      current.adjacent.each do |node|
+        list.push(node) if node.status == 0
+      end
+    end
+    return false
   end
 
   def two_link(start, fin)
