@@ -2,20 +2,6 @@ require_relative '../spec_helper.rb'
 
 describe Graph do
   graph = Graph.new
-
-  # a = Node.new
-  # b = Node.new("valueB")
-  # c = Node.new("valueC")
-  # d = Node.new("valueD")
-  # e = Node.new("valueE")
-  # f = Node.new("valueE")
-  # g = Node.new("valueE")
-  # h = Node.new("valueE")
-  # i = Node.new("valueE")
-  # a.add_adjacent(b,c)
-  # c.add_adjacent(d,e)
-  # e.add_adjacent(f,g)
-
   it "Is a graph" do
     expect(graph.class.to_s).to eq('Graph')
   end
@@ -31,25 +17,44 @@ describe Graph do
   end
 
   it "should be able to determine there is a link between 2 nodes in one way." do
-    a = Node.new("valueA")
-    b = Node.new("valueB")
-    c = Node.new("valueC")
-    d = Node.new("valueD")
-    e = Node.new("valueE")
-    f = Node.new("valueE")
-    g = Node.new("valueE")
-    h = Node.new("valueE")
-    i = Node.new("valueE")
-    a.add_adjacent(b,c)
-    c.add_adjacent(d,e)
-    e.add_adjacent(f,g)
-
+    a = GraphNode.new("valueA")
+    b = GraphNode.new("valueB")
+    c = GraphNode.new("valueC")
+    d = GraphNode.new("valueD")
+    e = GraphNode.new("valueE")
+    f = GraphNode.new("valueF")
+    g = GraphNode.new("valueG")
+    h = GraphNode.new("valueH")
+    i = GraphNode.new("valueI")
+    a.add_adjacent(b, c)
+    b.add_adjacent(a)
+    c.add_adjacent(d,e,b,a)
+    d.add_adjacent(c)
+    e.add_adjacent(c,f,g)
+    f.add_adjacent(f)
+    g.add_adjacent(e)
     value = graph.link_exist?(a, g)
     expect(value).to eq(true)
   end
 
-  # it "should correctly be able to determine there is a link between 2 nodes in one way." do
-  #   value = graph.link_exist?(a, i)
-  #   expect(value).to eq(false)
-  # end
+  it "should correctly be able to determine there is a link between 2 nodes in one way." do
+    a = GraphNode.new("valueA")
+    b = GraphNode.new("valueB")
+    c = GraphNode.new("valueC")
+    d = GraphNode.new("valueD")
+    e = GraphNode.new("valueE")
+    f = GraphNode.new("valueF")
+    g = GraphNode.new("valueG")
+    h = GraphNode.new("valueH")
+    i = GraphNode.new("valueI")
+    a.add_adjacent(b, c)
+    b.add_adjacent(a)
+    c.add_adjacent(d,e,b,a)
+    d.add_adjacent(c)
+    e.add_adjacent(c,f,g)
+    f.add_adjacent(f)
+    g.add_adjacent(e)
+    value = graph.link_exist?(a, i)
+    expect(value).to eq(false)
+  end
 end

@@ -1,4 +1,4 @@
-class Node
+class GraphNode
   attr_accessor :adjacent, :value, :status
   def initialize(value = nil)
     @value = value

@@ -15,18 +15,20 @@ class Graph
   private
 
   def one_link(start, fin)
+    start.leave
     list = start.adjacent
-    list.each do |node|
-      node.visit
-    end
-
+    start.leave
+    list.each {|node| node.visit }
     while !list.empty?
       current = list.shift
       next if current.status > 1
       return true if current == fin
       current.leave
       current.adjacent.each do |node|
-        list.push(node) if node.status == 0
+        if node.status == 0
+          list.push(node)
+          node.visit
+        end
       end
     end
     return false
