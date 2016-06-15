@@ -1,22 +1,25 @@
 require_relative '../spec_helper.rb'
 
 describe Graph do
-  graph = Graph.new
   it "Is a graph" do
+    graph = Graph.new
     expect(graph.class.to_s).to eq('Graph')
   end
 
   it "Should have an empty array for nodes." do
+    graph = Graph.new
     expect(graph.nodes).to eq([])
   end
 
   it "Should be able to add nodes." do
+    graph = Graph.new
     graph.nodes = [1,2,3,4]
     expect(graph.nodes).to eq([1,2,3,4])
     expect(graph.nodes.length).to eq(4)
   end
 
   it "should be able to determine there is a link between 2 nodes in one way." do
+    graph = Graph.new
     a = GraphNode.new("valueA")
     b = GraphNode.new("valueB")
     c = GraphNode.new("valueC")
@@ -38,6 +41,7 @@ describe Graph do
   end
 
   it "should correctly be able to determine there is a link between 2 nodes in one way." do
+    graph = Graph.new
     a = GraphNode.new("valueA")
     b = GraphNode.new("valueB")
     c = GraphNode.new("valueC")
