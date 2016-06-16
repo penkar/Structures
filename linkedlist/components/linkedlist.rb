@@ -33,7 +33,10 @@ class LinkedList
   end
 
   def remove
-
+    iterate(false)
+    current = @head.next
+    current.previous = nil
+    @head = current
   end
 
   def remove_tail

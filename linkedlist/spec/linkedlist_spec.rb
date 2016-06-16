@@ -40,4 +40,13 @@ describe LinkedList do
     expect(ll.length).to eq(2)
     expect(ll.tail.value).to eq(2)
   end
+
+  it "Should be able to remove the first node form the LinkedList" do
+    ll = LinkedList.new
+    ll.add(1, 'name1')
+    ll.add(2, 'name2')
+    ll.remove
+    expect(ll.length).to eq(1)
+    expect(ll.head.value).to eq(2)
+  end
 end
