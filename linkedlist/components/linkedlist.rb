@@ -29,7 +29,14 @@ class LinkedList
   end
 
   def remove_index(index)
-
+    return false if @length < index
+    current = @head
+    (index - 1).times do
+      current = current.next
+    end
+    current.previous.next = current.next if current.previous
+    current.next.previous = current.previous if current.next
+    iterate(false)
   end
 
   def remove

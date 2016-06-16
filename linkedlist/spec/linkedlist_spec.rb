@@ -49,4 +49,15 @@ describe LinkedList do
     expect(ll.length).to eq(1)
     expect(ll.head.value).to eq(2)
   end
+
+  it "Should be able to remove nodes within the linked list" do
+    ll = LinkedList.new
+    ll.add(1, 'name1')
+    ll.add(2, 'name2')
+    ll.add(3, 'name3')
+    ll.remove_index(2)
+    expect(ll.length).to eq(2)
+    expect(ll.head.value).to eq(1)
+    expect(ll.tail.value).to eq(3)
+  end
 end
