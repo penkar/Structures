@@ -1,2 +1,2 @@
 require 'rspec'
-require_relative 'component.rb'
+require_relative 'components.rb'
