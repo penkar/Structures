@@ -1,1 +1,1 @@
-require_relative './components/mergesort.rb'
+require_relative './component/mergesort.rb'
