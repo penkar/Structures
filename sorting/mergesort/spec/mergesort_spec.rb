@@ -16,4 +16,10 @@ describe Array do
   it "Should sort an array correctly" do
     expect((1..100).to_a.reverse.mergesort).to eq((1..100).to_a)
   end
+
+  it "Should sort an array correctly" do
+    arr = Array.new
+    100.times {arr.push(rand(1000))}
+    expect(arr.mergesort).to eq(arr.sort)
+  end
 end
