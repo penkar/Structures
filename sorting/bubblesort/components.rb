@@ -1,1 +1,1 @@
-require_relative './component/bubblesort.rb'
+require_relative './components/bubblesort.rb'
