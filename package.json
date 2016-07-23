@@ -1,0 +1,23 @@
+{
+  "name": "random",
+  "version": "1.0.0",
+  "description": "RandomDataStructures",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/penkar/Structures.git"
+  },
+  "author": "JSP",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/penkar/Structures/issues"
+  },
+  "homepage": "https://github.com/penkar/Structures#readme",
+  "dependencies": {
+    "mocha": "^2.5.3"
+  }
+}
