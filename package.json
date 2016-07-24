@@ -4,8 +4,7 @@
   "description": "RandomDataStructures",
   "main": "index.js",
   "scripts": {
-    "test": "test",
-    "start": ""
+    "test": "mocha --compilers js:babel-register --require babel-polyfill"
   },
   "repository": {
     "type": "git",

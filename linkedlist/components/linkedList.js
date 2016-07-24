@@ -5,10 +5,9 @@ export default class LinkedList {
     this._length = 0
   }
 
-  add(node){
+  add( node ){
     let { _head, _tail, _length } = this;
-    console.log(_head);
-    if(!_head){
+    if( !_head ){
       this._head = node;
     } else {
       this._tail.next = node;
@@ -19,8 +18,8 @@ export default class LinkedList {
 
   pop(){
     let { _head, _tail, _length } = this;
-    if(_tail){
-      if(_tail.previous){
+    if( _tail ){
+      if( _tail.previous ){
         let previous = _tail.previous
         this._tail = previous
         previous.next = null
@@ -33,10 +32,10 @@ export default class LinkedList {
     }
   }
 
-  remove(value){
+  remove( value ){
     let { _head, _tail, _length } = this;
-    while(_head){
-      if(_head.value === value){
+    while( _head ){
+      if( _head.value === value ){
         if( _head.previous ) _head.previous.next = _head.next;
         if( _head.next ) _head.next.previous = _head.previous;
         break;
@@ -46,7 +45,7 @@ export default class LinkedList {
   }
 
   len(){
-    let { _head, _tail, _length } = this;
+    let { _length } = this;
     return _length;
   }
 }
