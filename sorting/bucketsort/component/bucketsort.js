@@ -1,4 +1,4 @@
-function bucketSort(array){
+const BucketSort = (array) => {
   let tallest = array[0], shortest = array[0], nums = {}, array2 = [];
   for(var i = 0; i < array.length; i++){
     var num = array[i];
@@ -17,3 +17,4 @@ function bucketSort(array){
   }
   return array2;
 }
+export default BucketSort

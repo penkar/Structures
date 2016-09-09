@@ -1,4 +1,4 @@
-function bubbleSort(array){
+export default function BubbleSort(array){
   let len = array.length;
   while(true){
     var bool = true;

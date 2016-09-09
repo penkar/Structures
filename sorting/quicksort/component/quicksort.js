@@ -1,4 +1,4 @@
-function quickSort(array){
+const QuickSort = (array) => {
   let len = array.length;
   if(len < 2) return array;
   let lessr = [], great = [], equal = [];
@@ -13,5 +13,7 @@ function quickSort(array){
       equal.push(num);
     }
   }
-  return [].concat(quickSort(lessr), equal, quickSort(great));
+  return [].concat(QuickSort(lessr), equal, QuickSort(great));
 }
+
+export default QuickSort
