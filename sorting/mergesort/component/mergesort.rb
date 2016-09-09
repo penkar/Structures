@@ -10,17 +10,21 @@ class Array
 
   private
   def merge(aarr, barr)
-    carr = Array.new
-    while !aarr.empty? && !barr.empty?
-      if aarr[0] > barr[0]
-        carr.push(barr.shift)
+    carr, alen, blen = Array.new, aarr.length, barr.length
+    a, b = 0, 0
+    # while !aarr.empty? && !barr.empty?
+    while (a < alen) && (b < blen)
+      if aarr[a] > barr[b]
+        carr.push(barr[b])
+        b += 1
       else
-        carr.push(aarr.shift)
+        carr.push(aarr[a])
+        a += 1
       end
     end
 
-    carr = carr.concat(aarr) if !aarr.empty?
-    carr = carr.concat(barr) if !barr.empty?
+    carr = carr.concat(aarr.slice(a,alen) || [])
+    carr = carr.concat(barr.slice(b,blen) || [])
 
     return carr
   end
