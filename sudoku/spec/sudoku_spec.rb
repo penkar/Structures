@@ -37,4 +37,16 @@ describe Sudoku do
   it "Should correctly invalidate board that are incorrect." do
     expect(checker.sudoku(board_invalid)).to eq(false)
   end
+
+  it "Row validator should look for values 1-9" do
+    expect(checker.send(:sector_validate, [1,2,3,4,5,6,7,8,9])).to eq(true)
+  end
+
+  it "Row validator should look for 9 unique values" do
+    expect(checker.send(:sector_validate, [1,1,1,1,1,1,1,1,1])).to eq(false)
+  end
+
+  it "Row validator should validate row adds up to 45" do
+    expect(checker.send(:sector_validate, [1,2,3,4,5,6,7,8,90])).to eq(false)
+  end
 end
