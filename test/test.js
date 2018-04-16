@@ -1,6 +1,6 @@
 import 'babel-polyfill';
 import { BubbleSort, QuickSort, BucketSort, MergeSort } from '../sorting/index.js'
-
+import { board1, board2, boardValidator} from '../sudoku'
 
 
 var assert = require('assert');
@@ -29,5 +29,14 @@ describe ('QuickSort', () =>{
 describe ('BucketSort', () =>{
   it("Should be able to BucketSort...", () =>{
     assert.equal(BucketSort(unsorted).toString(), sorted.toString());
+  });
+});
+
+describe ('Sudoku', () =>{
+  it("It should know when a sudoku board is valid.", () =>{
+    assert.equal(boardValidator(board1), true);
+  });
+  it("It should know when a sudoku board is invalid.", () =>{
+    assert.equal(boardValidator(board2), false);
   });
 });
