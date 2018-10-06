@@ -1,5 +1,5 @@
 import 'babel-polyfill';
-import { BubbleSort, QuickSort, BucketSort, MergeSort } from '../sorting/index.js'
+import { BubbleSort, QuickSort, BucketSort, MergeSort, SelectionSort } from '../sorting/index.js'
 import { board1, board2, boardValidator} from '../sudoku'
 
 
@@ -23,6 +23,12 @@ describe ('MergeSort', () =>{
 describe ('QuickSort', () =>{
   it("Should be able to quicksort...", () =>{
     assert.equal(QuickSort(unsorted).toString(), sorted.toString());
+  });
+});
+
+describe ('SelectionSort', () =>{
+  it("Should be able to selection...", () =>{
+    assert.equal(SelectionSort(unsorted).toString(), sorted.toString());
   });
 });
 
