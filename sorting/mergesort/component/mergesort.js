@@ -1,5 +1,5 @@
 const MergeSort = (array) => {
-  let len = array.length
+  const len = array.length
   if(len < 2) return array;
   var arr1 = array.slice(0, len / 2), arr2 = array.slice(len/2, len);
   var array = null;
