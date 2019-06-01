@@ -1,6 +1,7 @@
 import 'babel-polyfill';
 import { BubbleSort, QuickSort, BucketSort, MergeSort, SelectionSort } from '../sorting/index.js'
 import { board1, board2, boardValidator} from '../sudoku'
+import * as Graph from '../graph'
 
 
 var assert = require('assert');
