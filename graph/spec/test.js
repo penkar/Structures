@@ -70,6 +70,16 @@ describe('Basic Graph Construction', () => {
     it('Should return false when nodes are not connected.', () => {
       assert.equal(false, SCG.breadthFirstSearch('a', 'z'));
     });
+  });
+
+  describe('Graph should be able to perform a depth first search.', function() {
+    it('Should return a depth first path.', () => {
+      assert.equal(JSON.stringify(['l','k','j','b','a']), JSON.stringify(SCG.depthFirstSearch('a', 'l')));
+      assert.equal(JSON.stringify(['c','a']), JSON.stringify(SCG.depthFirstSearch('a', 'c')));
+    });
+    it('Should return a falsey path when appropriate.', () => {
+      assert.equal(false, SCG.depthFirstSearch('a', 'z'));
+    });
   })
 });
 

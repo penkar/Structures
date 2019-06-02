@@ -58,14 +58,35 @@ export default class Graph {
         current = setup.get(current);
       }
       path.push(start);
+      return path;
     } else {
       return false;
     }
-    return path;
   }
 
   depthFirstSearch(start, end) {
-    let path = [start];
-    
+    let path = [], queue = [], current = start, setup = new Map(), connected = false;
+    while(current) {
+      let currentVerticies = this.getEdgesForVerticie(current);
+      if(current === end) {
+        connected = true;
+        break;
+      }
+      for(let i of currentVerticies) setup.set(i, current);
+
+      queue = [...currentVerticies, ...queue];
+      [current, ...queue] = queue;
+    }
+
+    if(connected) {
+      while(current && current != start) {
+        path.push(current);
+        current = setup.get(current);
+      }
+      path.push(start);
+      return path;
+    } else {
+      return false;
+    }
   }
 }
