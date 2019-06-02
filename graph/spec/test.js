@@ -50,20 +50,26 @@ describe('Basic Graph Construction', () => {
   });
 
   const SCG = new Graph();
-  SCG.addEdge('a', 'b');
-  SCG.addEdge('a', 'c');
-  SCG.addEdge('a', 'd');
-  SCG.addEdge('a', 'e');
-  SCG.addEdge('a', 'f');
-  SCG.addEdge('b', 'g');
-  SCG.addEdge('b', 'h');
-  SCG.addEdge('b', 'i');
-  SCG.addEdge('b', 'j');
-  SCG.addEdge('j', 'k');
-  SCG.addEdge('k', 'l');
-  SCG.addEdge('a', 'l');
+  SCG.addEdge('a', 'b', true);
+  SCG.addEdge('a', 'c', true);
+  SCG.addEdge('a', 'd', true);
+  SCG.addEdge('a', 'e', true);
+  SCG.addEdge('a', 'f', true);
+  SCG.addEdge('b', 'g', true);
+  SCG.addEdge('b', 'h', true);
+  SCG.addEdge('b', 'i', true);
+  SCG.addEdge('b', 'j', true);
+  SCG.addEdge('j', 'k', true);
+  SCG.addEdge('k', 'l', true);
+  SCG.addEdge('a', 'l', true);
   describe('Graph should be able to perform a depth first search.', function() {
-
+    it('Should be able to conduct a Breadth First Search for a directed graph.', () => {
+      assert.equal(JSON.stringify(['l', 'a']), JSON.stringify(SCG.breadthFirstSearch('a', 'l')));
+      assert.equal(JSON.stringify(['k','j','b','a']), JSON.stringify(SCG.breadthFirstSearch('a', 'k')));
+    });
+    it('Should return false when nodes are not connected.', () => {
+      assert.equal(false, SCG.breadthFirstSearch('a', 'z'));
+    });
   })
 });
 
