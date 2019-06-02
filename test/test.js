@@ -2,14 +2,17 @@ import 'babel-polyfill';
 import { BubbleSort, QuickSort, BucketSort, MergeSort, SelectionSort, InsertionSort } from '../sorting/index.js'
 import { board1, board2, boardValidator} from '../sudoku'
 import * as Graph from '../graph'
+import * as LL from '../linkedlist'
 
 
 const assert = require('assert');
 
 const unsorted = [10,9,8,7,6,5,4,3,2,1,1,2,3,4,5,6,7,8,9,0];
 const sorted = [0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10];
-const randomUnsorted = new Array(2000);
-randomUnsorted.map((x) => Math.floor(Math.random() * 10000));
+const randomUnsorted = new Array();
+for(let i = 0; i < 20000; i++) {
+  randomUnsorted[i] = Math.floor(Math.random() * 10000);
+}
 const randomSorted = randomUnsorted.sort();
 
 describe ('BubbleSort', () =>{

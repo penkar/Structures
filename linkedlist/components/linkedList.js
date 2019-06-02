@@ -1,51 +1,63 @@
 export default class LinkedList {
-  constructor() {
-    this._head = null
-    this._tail = null
-    this._length = 0
-  }
+  _head = null;
+  _tail = null;
+  _length = 0;
+  len = () => this._length;
 
-  add( node ){
-    let { _head, _tail, _length } = this;
-    if( !_head ){
+  add(node) {
+    const tail = this._tail, head = this._head;
+    if(this._head === null) {
       this._head = node;
     } else {
-      this._tail.next = node;
+      node._previous = tail;
     }
-    this._tail = node;
-    this._length = _length + 1;
+    if(tail === null) {
+      this._tail = node;
+    } else {
+      tail._next = node;
+      node._previous = tail;
+      this._tail = node;
+    }
+    this._length++;
   }
 
-  pop(){
-    let { _head, _tail, _length } = this;
-    if( _tail ){
-      if( _tail.previous ){
-        let previous = _tail.previous
-        this._tail = previous
-        previous.next = null
+  pop() {
+    let tails = this._tail;
+    if( tails ){
+      if( tails._previous ){
+        let previous = tails._previous;
+        this._tail = previous;
+        previous.next = null;
       } else {
         this._tail = null;
         this._head = null;
       }
+      this._length--;
     } else {
       return false
     }
   }
 
-  remove( value ){
-    let { _head, _tail, _length } = this;
-    while( _head ){
-      if( _head.value === value ){
-        if( _head.previous ) _head.previous.next = _head.next;
-        if( _head.next ) _head.next.previous = _head.previous;
-        break;
-      }
-      _head = _head.next;
+  search(value) {
+    let head = this._head;
+    while(head) {
+      if(head._value === value) break;
+      head = head._next;
     }
+    return head;
   }
 
-  len(){
-    let { _length } = this;
-    return _length;
+  remove(value) {
+    let head = this._head;
+    while(head) {
+      if( head._value === value ){
+        if( head._previous ) head._previous._next = head._next;
+        if( head._next ) head._next._previous = head._previous;
+        this._length--;
+        break;
+      }
+      head = head._next;
+    }
+    return head;
   }
 }

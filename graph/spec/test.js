@@ -1,6 +1,5 @@
 import Graph from '../components/graph.js';
-
-let assert = require('chai').assert;
+import {assert} from 'chai';
 
 describe('Basic Graph Construction', () => {
   const simpleGraph = new Graph();
