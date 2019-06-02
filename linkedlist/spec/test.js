@@ -1,21 +1,19 @@
+import {assert} from 'chai';
 import Node from '../components/linkedListNode.js';
 import LinkedList from '../components/linkedList.js';
-import {assert} from 'chai';
 
 const LL = new LinkedList;
 let a = new Node('a'), b = new Node('b'), c = new Node('c'), d = new Node('d'), e = new Node('e'), f = new Node('f');
 
 describe('LinkedList setup.', () => {
-  describe('#typeof()', () => {
-    it('Should display a type of LinkedList.', () => {
-      assert.equal('object', typeof(LL));
-    });
-    it('Should have null / zero values for head, tail and length.', () => {
-      assert.equal(0, LL._length);
-      assert.equal(null, LL._head);
-      assert.equal(null, LL._tail);
-    })
+  it('Should display a type of LinkedList.', () => {
+    assert.equal('object', typeof(LL));
   });
+  it('Should have null / zero values for head, tail and length.', () => {
+    assert.equal(0, LL._length);
+    assert.equal(null, LL._head);
+    assert.equal(null, LL._tail);
+  })
 });
 
 describe('Node', () => {

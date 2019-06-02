@@ -1,5 +1,4 @@
 import {board1} from './board'
-
 const boardValidator = (board) => {
   const Validate = (num) => (45 !== num);
   board.forEach((row) => {
@@ -25,4 +24,4 @@ const boardValidator = (board) => {
   return true;
 }
 
-export {boardValidator}
+export default boardValidator
