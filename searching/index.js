@@ -38,7 +38,7 @@ describe('InterplationSort', () => {
       return a - b;
     }
     let newarray = [...array].sort(sortNumber);
-    for(let i = 1; i < 100; i++) {
+    for(let i = 1; i < 1000; i++) {
       let position = newarray.indexOf(i);
       if(position === -1) position = false;
 
@@ -85,7 +85,7 @@ describe ('BinarySort', () =>{
       return a - b;
     }
     let newarray = [...array].sort(sortNumber);
-    for(let i = 1; i < 100; i++) {
+    for(let i = 1; i < 1000; i++) {
       let position = newarray.indexOf(i);
       if(position === -1) position = false;
       assert.equal(BinarySort(newarray, i), position);
