@@ -43,15 +43,9 @@ describe('InterplationSort', () => {
       if(position === -1) position = false;
 
       assert.equal(InterpolationSearch(newarray, i), position);
-    }
-    
+    } 
   })
 });
-
-
-
-
-
 
 describe ('BinarySort', () =>{
   it("Binary search should return false if searching through an empty array.", () =>{
