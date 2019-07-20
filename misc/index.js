@@ -1,5 +1,6 @@
 import {assert} from 'chai';
 import CC from './caesarcipher/caesarcipher.js';
+import PI from './pifrommontecarlo/pifrommontecarlo.js';
 
 describe('Caesar Cipher', () => {
   it("Simple Caesar Cipher implementation.", () => {
@@ -12,4 +13,10 @@ describe('Caesar Cipher', () => {
   it("Short string implementation.", () => {
     assert.equal(CC('hello', 1), 'ifmmp');
   });
+})
+
+describe('With a set of random numbers you should be able to find PI.', () => {
+  it('Should return a number that vaguely resembles Pi.', () => {
+    assert.equal(parseInt(PI(5000000) * 100), 314);
+  })
 })
