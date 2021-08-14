@@ -14,56 +14,56 @@ for(let i = 0; i < 20000; i++) {
 }
 const randomSorted = randomUnsorted.sort();
 
-describe ('BubbleSort', () =>{
-  it("Should be able to bubblesort using the standard 20 point array.", () =>{
+describe ('BubbleSort', () => {
+  it("Should be able to bubblesort using the standard 20 point array.", () => {
     assert.equal(BubbleSort(unsorted).toString(), sorted.toString());
   });
-  it("Should be able to bubblesort using the nonstandard unsorted array.", () =>{
+  it("Should be able to bubblesort using the nonstandard unsorted array.", () => {
     assert.equal(BubbleSort(randomUnsorted).toString(), randomSorted.toString());
   });
 });
 
-describe ('MergeSort', () =>{
-  it("Should be able to mergesort using the standard 20 point array.", () =>{
+describe ('MergeSort', () => {
+  it("Should be able to mergesort using the standard 20 point array.", () => {
     assert.equal(MergeSort(unsorted).toString(), sorted.toString());
   });
-  it("Should be able to mergesort using the nonstandard unsorted array.", () =>{
+  it("Should be able to mergesort using the nonstandard unsorted array.", () => {
     assert.equal(MergeSort(randomUnsorted).toString(), randomSorted.toString());
   });
 });
 
-describe ('QuickSort', () =>{
-  it("Should be able to quicksort using the standard 20 point array.", () =>{
+describe ('QuickSort', () => {
+  it("Should be able to quicksort using the standard 20 point array.", () => {
     assert.equal(QuickSort(unsorted).toString(), sorted.toString());
   });
-  it("Should be able to quicksort using the nonstandard unsorted array.", () =>{
+  it("Should be able to quicksort using the nonstandard unsorted array.", () => {
     assert.equal(QuickSort(randomUnsorted).toString(), randomSorted.toString());
   });
 });
 
-describe ('SelectionSort', () =>{
-  it("Should be able to selection using the standard 20 point array.", () =>{
+describe ('SelectionSort', () => {
+  it("Should be able to selection using the standard 20 point array.", () => {
     assert.equal(SelectionSort(unsorted).toString(), sorted.toString());
   });
-  it("Should be able to selection using the nonstandard unsorted array.", () =>{
+  it("Should be able to selection using the nonstandard unsorted array.", () => {
     assert.equal(SelectionSort(randomUnsorted).toString(), randomSorted.toString());
   });
 });
 
-describe ('BucketSort', () =>{
-  it("Should be able to BucketSort using the standard 20 point array.", () =>{
+describe ('BucketSort', () => {
+  it("Should be able to BucketSort using the standard 20 point array.", () => {
     assert.equal(BucketSort(unsorted).toString(), sorted.toString());
   });
-  it("Should be able to BucketSort using the nonstandard unsorted array.", () =>{
+  it("Should be able to BucketSort using the nonstandard unsorted array.", () => {
     assert.equal(BucketSort(randomUnsorted).toString(), randomSorted.toString());
   });
 });
 
-describe ('InsertionSort', () =>{
-  it("Should be able to InsertionSort using the standard 20 point array.", () =>{
+describe ('InsertionSort', () => {
+  it("Should be able to InsertionSort using the standard 20 point array.", () => {
     assert.equal(InsertionSort(unsorted).toString(), sorted.toString());
   });
-  it("Should be able to InsertionSort using the nonstandard unsorted array.", () =>{
+  it("Should be able to InsertionSort using the nonstandard unsorted array.", () => {
     assert.equal(InsertionSort(randomUnsorted).toString(), randomSorted.toString());
   });
 });

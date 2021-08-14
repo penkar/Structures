@@ -47,8 +47,8 @@ describe('InterplationSort', () => {
   })
 });
 
-describe ('BinarySort', () =>{
-  it("Binary search should return false if searching through an empty array.", () =>{
+describe ('BinarySort', () => {
+  it("Binary search should return false if searching through an empty array.", () => {
     assert.equal(BinarySort([], 1), false);
   });
   
