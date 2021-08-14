@@ -5,6 +5,7 @@ export default class LinkedList {
   len = () => this._length;
 
   add(node) {
+    /*  Function will add a new node to a linked list. */
     const tail = this._tail, head = this._head;
     if(this._head === null) {
       this._head = node;
@@ -22,6 +23,7 @@ export default class LinkedList {
   }
 
   pop() {
+    /*  Function will return the last node in a linked list. */
     let tails = this._tail;
     if( tails ){
       if( tails._previous ){
@@ -39,18 +41,22 @@ export default class LinkedList {
   }
 
   search(value) {
+    /*  Function will search through a linked list and return true or
+        false for whether the value exists in the linked list or not. */
     let head = this._head;
     while(head) {
       if(head._value === value) break;
       head = head._next;
     }
-    return head;
+    return Boolean(head);
   }
 
   remove(value) {
+    /*  Function will remove and return a node from a linked list.
+        If the node does not exist null should be returned. */
     let head = this._head;
     while(head) {
-      if( head._value === value ){
+      if( head._value === value ) {
         if( head._previous ) head._previous._next = head._next;
         if( head._next ) head._next._previous = head._previous;
         this._length--;

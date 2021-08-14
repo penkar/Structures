@@ -1,4 +1,5 @@
-import {board1} from './board'
+import { board1 } from './board.js';
+
 const boardValidator = (board) => {
   const Validate = (num) => (45 !== num);
   board.forEach((row) => {

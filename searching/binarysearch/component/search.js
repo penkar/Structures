@@ -1,4 +1,6 @@
 export default function binarySearch(sortedarray, term) {
+  /*  Binary Search function - Input should be a sorted array, and a sought after term.
+      Return value is a Boolean indicating whether the term is in the array or not. */
   if(Array.isArray(sortedarray) && !sortedarray.length) return false;
   let position = parseInt((sortedarray.length / 2) + 1), 
     left = 0, 

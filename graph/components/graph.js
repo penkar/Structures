@@ -1,20 +1,20 @@
 export default class Graph {
-  adjacentList = new Map();
-  verticiesCount = 0;
-  getEdgesForVerticie = (vertice) => this.adjacentList.get(vertice);
-  printVerticies = () => [...this.adjacentList.keys()];
+  _adjacentList = new Map();
+  _verticiesCount = 0;
+  getEdgesForVerticie = (vertice) => this._adjacentList.get(vertice);
+  printVerticies = () => [...this._adjacentList.keys()];
 
   addVertice(vertice) {
-    this.verticiesCount++
-    this.adjacentList.set(vertice, new Set());
+    this._verticiesCount++
+    this._adjacentList.set(vertice, new Set());
   }
 
   addEdge(edge1, edge2, directed = false) {
     if(edge1 !== edge2) {
-      if(!this.adjacentList.has(edge1)) this.addVertice(edge1);
-      this.adjacentList.get(edge1).add(edge2);
-      if(!this.adjacentList.has(edge2)) this.addVertice(edge2);
-      if(!directed) this.adjacentList.get(edge2).add(edge1);
+      if(!this._adjacentList.has(edge1)) this.addVertice(edge1);
+      this._adjacentList.get(edge1).add(edge2);
+      if(!this._adjacentList.has(edge2)) this.addVertice(edge2);
+      if(!directed) this._adjacentList.get(edge2).add(edge1);
     }
   }
 
