@@ -10,7 +10,7 @@ class Node {
   }
 }
 
-class BinarySearchTree {
+export default class BinarySearchTree {
   constructor(defaults=[]) {
     this._head = undefined;
     for (let i = 0; i < defaults.length; i++) {
