@@ -1,19 +1,23 @@
 const QuickSort = (array) => {
-  let len = array.length;
-  if(len < 2) return array;
-  let lessr = [], great = [], equal = [];
-  let pivot = (array[0] + array[len-1]) / 2;
-  for(var i = 0; i < len; i++){
-    var num = array[i];
-    if(num < pivot){
-      lessr.push(num);
-    } else if (num > pivot){
-      great.push(num);
+  const len = array.length;
+  if (len < 2) return array;
+
+  const pivot = array[Math.floor(len / 2)];
+  const lesser = [];
+  const greater = [];
+  const equal = [];
+
+  for (var i = 0; i < len; i++) {
+    let num = array[i];
+    if (num < pivot) {
+      lesser.push(num);
+    } else if (num > pivot) {
+      greater.push(num);
     } else {
       equal.push(num);
     }
   }
-  return [].concat(QuickSort(lessr), equal, QuickSort(great));
-}
+  return [].concat(QuickSort(lesser), equal, QuickSort(greater));
+};
 
-export default QuickSort
+export default QuickSort;
