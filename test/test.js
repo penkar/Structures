@@ -5,3 +5,4 @@ import * as Sortings from '../sorting/index.js';
 import * as Sudoku from '../sudoku/index.js';
 import * as Misc from '../misc/index.js';
 import * as Tree from '../tree/index.js';
+import * as Cache from '../cache/index.js';
