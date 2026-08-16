@@ -7,7 +7,7 @@ const QuickSort = (array) => {
   const greater = [];
   const equal = [];
 
-  for (var i = 0; i < len; i++) {
+  for (let i = 0; i < len; i++) {
     let num = array[i];
     if (num < pivot) {
       lesser.push(num);

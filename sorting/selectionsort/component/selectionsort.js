@@ -18,7 +18,6 @@ const SelectionSort = (list) => {
     /*  If a lower number is found, the current number and
         the lowest number's places will be swapped. */
     if (i !== lowIndex) {
-      let a = list[i];
       list[lowIndex] = list[i];
       list[i] = low;
     }
